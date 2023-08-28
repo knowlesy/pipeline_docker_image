@@ -1,0 +1,24 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: Docker@0
+  displayName: 'Build an image'
+  inputs:
+    azureSubscription: container
+    azureContainerRegistry: '{"loginServer":"$(login)", "id" : "$(id)"}'
+    dockerFile: dockerfile
+    imageName: 'PS-$(Build.Repository.Name):$(Build.BuildId)'
+    includeLatestTag: true
+
+- task: Docker@0
+  displayName: 'Push an image'
+  inputs:
+    azureSubscription: container
+    azureContainerRegistry: '{"loginServer":"$(login)", "id" : "$(id)"}'
+    action: 'Push an image'
+    imageName: 'PS-$(Build.Repository.Name):$(Build.BuildId)'
+    includeLatestTag: true
