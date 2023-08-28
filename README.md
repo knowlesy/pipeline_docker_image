@@ -1,4 +1,4 @@
-# ADO Pipeline to Create a Container image
+# ADO Pipeline to create a container image and push to a Azure Container Repo
 Azure Devops Container Build Pipeline
 
 ADO = Azure Devops
