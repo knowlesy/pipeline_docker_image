@@ -14,7 +14,8 @@ This is a lab only !
 * VSCode with TF Extension and Git
 * AZ Cli or AZ PS Module 
 * Azure Environment
-* Docker compose 
+* Docker - if you want to check this locally
+* ADO Microsoft hosted machines enabled 
 * Azure Service Principle created  and set up in Azure devops [guide](https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/service-principal-managed-identity?view=azure-devops) , [alt guide](https://learn.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli)
 
 ## Instructions
@@ -94,7 +95,7 @@ In Azure portal or via your connection to Azure run thr following AZ Cli command
 
 To get a list of the versions run the following substituting reponame for your image name / build shown in the previous step
 
-    az acr repository show-tags -n <RegistryName> --repository <reponame> --orderby time_desc --output table
+    az acr repository show-tags -n <acrName> --repository <reponame> --orderby time_desc --output table
 
 
 Time to clean up..... 
